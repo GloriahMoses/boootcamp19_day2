@@ -1,5 +1,5 @@
 import unittest
-from employee import StaffMember
+from employee import Person, Student, StaffMember, Lecturer, SubodinateStaff 
 
 class StudentTestCases(unittest.TestCase):
   
@@ -18,7 +18,7 @@ class StudentTestCases(unittest.TestCase):
   
   def test_Student_can_change_course(self):
     message = self.S.change_course("Computer Science","Literature")
-    self.assertEquals(message, "You have successfully changed the course")
+    self.assertEquals(message, "You are not enrolled to any course")
   
 
 
@@ -66,8 +66,8 @@ class SubodinateStaffTestCases(unittest.TestCase):
     self.assertTrue(isinstance(self.SS, Person), msg='SubodinateStaff is not a subclass of Person')
 
   def test_Lecturer_can_assign_station(self):
-    course = self.SS.assign_course("Library Counter")
-    self.assertEquals(course, "successfully assigned station")
+    station = self.SS.assign_station("Library Counter")
+    self.assertEquals(station, "Staff assigned work station successfully")
   
 
 if __name__ == "__main__":
